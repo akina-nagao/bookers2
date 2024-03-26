@@ -1,0 +1,40 @@
+<div>
+  <h1>User info</h1>
+  <%= image_tag @books.get_profile_image(100,100) %>
+</div>
+
+<div>
+  <%= link_to book_path(book.id) do %>
+    <%= image_tag book.get_profile_image %>
+  <% end %>
+  <p><%= image_tag post_image.user.get_profile_image(100,100) %></p>
+  <p>ユーザーネーム：<%= post_image.user.name %></p>
+</div>
+<% end %>
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= f.label :image %></th>
+          <th><%= f.label :name %></th>
+        </tr>
+        <tr></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <%= image_tag @book.get_profile_image %>
+          </td>
+          <td>
+            <%= @user.name %>
+          </td>
+          <td>
+            <% if @book.user == current_user %>
+              <%= link_to 'Show', book_path(@book.id) %>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

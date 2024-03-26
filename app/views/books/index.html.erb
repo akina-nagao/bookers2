@@ -1,0 +1,27 @@
+  <h2>Books</h2>
+  <div>
+    <table class="table">
+      <thead>
+        <th>
+          <tr><%= :Title %></tr>
+          <tr><%= :Opinion %></tr>
+        </th>
+      </thead>
+      <% @books.each do |book| %>
+      <tbody>
+        <tr>
+          </td>
+          <td>
+            <%= link_to book_path(book.id) do %>
+              <%= image_tag book.get_profile_image %>
+            <% end %>
+            <%= link_to book_path(book.id) do %>
+              <%= book.title %>
+            <% end %>
+              <%= book.body %>
+          </td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+  </div>
