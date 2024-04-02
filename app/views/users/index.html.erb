@@ -21,12 +21,12 @@
         <tbody>
           <tr></tr>
           <tr>
-            <th>name</th>
-            <th><%= @user.name %></th>
+            <td>name</td>
+            <td><%= @user.name %></td>
           </tr>
           <tr>
-            <th>introduction</th>
-            <th><%= @user.introduction %></th>
+            <td>introduction</td>
+            <td><%= @user.introduction %></td>
           </tr>
         </tbody>
       </table>
@@ -46,15 +46,15 @@
             <%= f.text_area :body, class: "form-control book_body" %>
           </div>
           <div class="form-group">
-            <%= f.submit 'Create Book', class: "btn btn-sm btn-success" %>
+            <%= f.submit 'Create Book', class: "btn btn-md btn-success" %>
           </div>
         <% end %>
     </div>
 
 
-
+  <div class="col-md-8 offset-md-1">
     <h2>Users</h2>
-      <table class="table">
+      <table class="table table-hover table-inverse">
         <thead>
           <tr>
             <th>image</th>
@@ -74,3 +74,4 @@
       </table>
     </div>
   </div>
+</div>

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index, :edit]
   
   def index
-    @user = current_user.id
+    @user = current_user
     @users = User.all
     @book = Book.new
     @books = Book.all
@@ -10,9 +10,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @users = User.all
-    @book = Book.new
-    @books = Book.all
+    @books = @user.books
   end
   
   def edit
